@@ -27,7 +27,40 @@
 					}
 				}
 			],
-			"_postman_id": "70f24b48-5755-4719-9775-1c6ec1803329",
+			"id": "70f24b48-5755-4719-9775-1c6ec1803329",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://postman-echo.com/get"
+			},
+			"response": []
+		},
+		{
+			"name": "Echo Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65decf81-15cd-4034-8f67-b77484e64199",
+						"exec": [
+							"pm.test(\"got correct URL\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.url).to.eql(\"https://postman-echo.com/get\");",
+							"});",
+							"",
+							"pm.test(\"got wrong URL\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.url).to.eql(\"https://postman-echo.com/get/1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2849660e-6ad1-411a-8d5c-37e0ac2844fa",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
