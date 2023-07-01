@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "d156b9bc-853f-4d55-a027-22575a7045aa",
+		"name": "Postman Experiments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7795713"
+	},
+	"item": [
+		{
+			"name": "Echo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"got correct URL\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.url).to.eql(\"https://postman-echo.com/get\");",
+							"});",
+							"",
+							"pm.test(\"got wrong URL\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.url).to.eql(\"https://postman-echo.com/get/1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Echo Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"got correct URL\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.url).to.eql(\"https://postman-echo.com/get\");",
+							"});",
+							"",
+							"pm.test(\"got wrong URL\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.url).to.eql(\"https://postman-echo.com/get/1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
